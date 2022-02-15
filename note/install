@@ -1,0 +1,103 @@
+; ========================================================
+# 步驟 ====================================================
+1. 
+brew install openjdk
+
+2. 
+sudo ln -sfn $(brew --prefix)/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
+
+3.
+javac xxx.java
+
+
+
+
+; ========================================================
+; 可選 openjdk 或 Oracle 的
+brew install openjdk
+
+; ========================================================
+sudo ln -sfn $(brew --prefix)/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
+
+  - 符號連結 (Symbolic Link) 檔案
+  - 沒有回傳的文字訊息
+  
+  ; --------------------------------------------------
+  https://www.itread01.com/content/1550113751.html
+  sudo ln -s 原始檔 目標檔案 
+
+  舉例：
+
+  當前目錄是/local, 而我經常要訪問/usr/local/linux/work
+
+  那麼我就可以使用在local下建立一個檔案linkwork, 
+
+  然後sudo ln -s /usr/local/linux/work  /local/linkwork
+
+  即建立兩者之間的連結。
+
+  刪除連結
+
+  rm -rf   symbolic_name   注意不是rm -rf   symbolic_name/ 
+  那麼上面我就是rm -rf   /local/linkwork
+  連結有兩種, 一種被稱為硬連結 (Hard Link) , 另一種被稱為符號連結 (Symbolic Link) 。
+  建立硬連結時, 連結檔案和被連結檔案必須位於同一個檔案系統中, 並且不能建立指向目錄的硬連結。
+  而對符號連結, 則不存在這個問題。預設情況下, ln產生硬連結。
+      在硬連結的情況下, 引數中的“目標”被連結至[連結名]。如果[連結名]是一個目錄名, 
+  系統將在該目錄之下建立一個或多個與“目標”同名的連結檔案, 連結檔案和被連結檔案的內容完全相同。
+  如果[連結名]為一個檔案, 使用者將被告知該檔案已存在且不進行連結。如果指定了多個“目標”引數, 
+  那麼最後一個引數必須為目錄。
+      如果給ln命令加上- s選項, 則建立符號連結。如果[連結名]已經存在但不是目錄, 將不做連結。
+  [連結名]可以是任何一個檔名 (可包含路徑) , 也可以是一個目錄, 並且允許它與“目標”不在同一個檔案系統中。
+  如果[連結名]是一個已經存在的目錄, 系統將在該目錄下建立一個或多個與“目標”同名的檔案, 
+  此新建的檔案實際上是指向原“目標”的符號連結檔案。
+  ; --------------------------------------------------
+
+; ========================================================
+; https://matthung0807.blogspot.com/2020/08/mac-homebrew-install-jdk.html
+
+brew search java
+
+查詢有哪些版本可以安裝。
+
+
+  ; --------------------------------------------------
+  /usr/libexec/java_home
+
+  安裝完後輸入/usr/libexec/java_home -V查看Mac已安裝的JDK
+
+  $ /usr/libexec/java_home
+
+  ......./openjdk/17.0.2/libexec/openjdk.jdk/Contents/Home
+
+  ; --------------------------------------------------
+  $ /usr/libexec/java_home -V
+
+  Matching Java Virtual Machines (1):
+      17.0.2 (x86_64) "Homebrew" - "OpenJDK 17.0.2" ........./openjdk/17.0.2/libexec/openjdk.jdk/Contents/Home
+  ......../openjdk/17.0.2/libexec/openjdk.jdk/Contents/Home
+
+; ========================================================
+$ java --version          
+
+openjdk 17.0.2 2022-01-18
+OpenJDK Runtime Environment Homebrew (build 17.0.2+0)
+OpenJDK 64-Bit Server VM Homebrew (build 17.0.2+0, mixed mode, sharing)
+
+; ========================================================
+man java_home
+
+  你將得到：
+  爪哇之家 (1) 爪哇之家 (1) 
+  姓名
+  java home-返回$javahome的值
+  簡介
+  /usr/libexec/java_home[選項]
+  說明
+  java home命令返回一個適合設定javahome的路徑
+  環境變數。它從使用者啟用的
+  以及Java首選項應用程式中的首選JVM。附加
+  可以提供約束來篩選可用的jvm列表。由
+  預設情況下, 如果沒有與可用的jvm列表匹配的約束, 則
+  使用預設順序。路徑被列印到標準輸出。
+
