@@ -1,16 +1,54 @@
 ; ========================================================
 # 步驟 ====================================================
-1. 
-brew install openjdk
+1. 安裝 jdk
+  $ brew install openjdk
 
-2. 
-sudo ln -sfn $(brew --prefix)/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
+2. Symbolic Link jdk
+  $ sudo ln -sfn $(brew --prefix)/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
 
-3.
+3. 安裝 jenv
+  $ brew install jenv
+
+4. 設定路徑等等..在 .zshrc
+  $ echo 'export PATH="$HOME/.jenv/bin:$PATH"' >> ~/.zshrc
+  $ echo 'eval "$(jenv init -)"' >> ~/.zshrc
+
+5. add 需要的版本到 jenv
+  $ jenv add /Library/Java/JavaVirtualMachines/openjdk.jdk/Contents/Home
+
+6. compile 
 javac xxx.java
 
 
 
+; ========================================================
+; https://www.jenv.be/
+; issue:
+; https://stackoverflow.com/questions/52524112/how-do-i-install-java-on-mac-osx-allowing-version-switching
+; https://ports.macports.org/port/jenv/details/
+; https://github.com/jenv/jenv/issues/139
+可用 jenv 管理 java 版本。
+
+  ; --------------------------------------------------
+  $ brew install jenv
+
+  $ echo 'export PATH="$HOME/.jenv/bin:$PATH"' >> ~/.zshrc
+  $ echo 'eval "$(jenv init -)"' >> ~/.zshrc
+
+  ; 這個步驟前, 須先安裝 jdk, 而 jenv 只用來版控？
+  ; Optional: install some openjdk* ports if you don't have Java yet:
+  ; sudo port install openjdk11 openjdk17
+  $ jenv add /Library/Java/JavaVirtualMachines/openjdk.jdk/Contents/Home
+  openjdk64-17.0.2 added
+  17.0.2 added
+  17.0 added
+  17 added
+
+  ; 三種範圍選擇，設定使用版本:
+  $ jenv global openjdk64-17.0.2 
+  $ jenv local openjdk64-17.0.2 ;per directory
+  $ jenv shell openjdk64-17.0.2 ;the shell
+  ; --------------------------------------------------
 
 ; ========================================================
 ; 可選 openjdk 或 Oracle 的
