@@ -1,37 +1,36 @@
-public abstract class Duck{
-  FlyBehavior flyBehavior;
-  QuackBehavior quackBehavior;
+public abstract class Duck {
+    FlyBehavior flyBehavior;
+    QuackBehavior quackBehavior;
 
-  // constructor
-  public Duck(){}
+    // constructor
+    public Duck() {
+    }
 
-  // 
-  public abstract void display();
+    //
+    public abstract void display();
 
-  // use interface
-  public void performFly(){
-    flyBehavior.fly();
-  }
+    // use interface
+    public void performFly() {
+        flyBehavior.fly();
+    }
 
-  public void performQuack(){
-    quackBehavior.quack();
-  }
+    public void performQuack() {
+        quackBehavior.quack();
+    }
 
-  // 
-  public void swim(){
-    System.out.println("All ducks float, even decoys!")
-  }
-  
-  // setter
-  public void setFlyBehavior(FlyBehavior fb){
-    flyBehavior = fb;
-  }
+    //
+    public void swim() {
+        System.out.println("All ducks float, even decoys!");
+    }
 
-  public void setQuackBehavior(QuackBehavior qb){
-    quackBehavior = qb;
-  }
+    // setter
+    public void setFlyBehavior(FlyBehavior fb) {
+        flyBehavior = fb;
+    }
 
-
+    public void setQuackBehavior(QuackBehavior qb) {
+        quackBehavior = qb;
+    }
 
 
 }

@@ -8,3 +8,55 @@
       I. IS-A
      II. HAS-A
     III. IMPLEMENTS
+
+
+
+
+# JAVA ============================================
+"In Java, every application begins with a class name, and that class must match the filename."
+"Any code inside the main() method will be executed, and that every program must contain the main() method."
+"String is a java class, unlike basic types (int, double, float, char, boolean)."
+
+      # type --------------------------------
+      ＊ Primitive: 
+            "byte", "short", "int", "long", "float", "double", "boolean", "char"
+            "no additional methods"
+      ＊ Non-primitive: 
+            "String", "Arrays", "Classes"
+
+            ; ex. ------------------------
+            int myNum = 5;
+            float myFloatNum = 5.99f;   <-- f?
+            char myLetter = 'D';        <-- single quotes
+            boolean myBool = true;
+            String myText = "Hello";    <-- double quotes
+            String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};  <-- Arrays
+            int[][] myNumbers = { {1, 2, 3, 4}, {5, 6, 7} };
+            ; ex. ------------------------
+
+      # Type Casting -------------------------
+      "https://stackoverflow.com/questions/1293819/why-does-java-implicitly-without-cast-convert-a-long-to-a-float"
+
+"Widening Casting" (automatically) --->                   <--- "Narrowing Casting" (manually)
+--                                                                                        --
+|              1       2       2       4      8        4        8      bytes               |
+|            byte -> short -> char -> int -> long -> float -> double                       |
+--                                                                                        --
+            ; Subtle ------------------------
+            "Loss of magnitude" float -> long 保證有東西
+            "Loss of precision" long -> float 犧牲精確度
+            ; Subtle ------------------------
+
+      ; ex. ------------------------
+      Widening Casting
+            int myInt = 9;
+            double myDouble = myInt; 
+
+      Narrowing Casting
+            double myDouble = 9.78d;
+            int myInt = (int) myDouble;
+      
+      運算時
+            long sum1 = 100 + 50;
+            int sum2 = 250 + (int)sum1;
+      ; ex. ------------------------

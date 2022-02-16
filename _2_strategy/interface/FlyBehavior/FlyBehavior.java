@@ -1,3 +1,3 @@
-public interface FlyBehavior{
-  public void fly();
+public interface FlyBehavior {
+    public void fly();
 }
