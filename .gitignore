@@ -7,6 +7,7 @@
 /src
 *.iml
 .idea
+.class
 /captures
 release
 google-services.json
