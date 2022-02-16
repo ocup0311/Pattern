@@ -1,0 +1,89 @@
+# JAVA ============================================
+In Java, every application begins with a "class name", and that class must match the "filename".
+
+Any code inside the "main()" method will be executed, and that every program must contain the main() method.
+
+"String" is a java class, unlike basic types (int, double, float, char, boolean).
+
+A "method" must be declared within a class.
+
+# type ============================================
+＊ Primitive: 
+      "byte", "short", "int", "long", "float", "double", "boolean", "char"
+      "no additional methods"
+＊ Non-primitive: 
+      "String", "Arrays", "Classes"
+
+      ; ex. ------------------------
+      int myNum = 5;
+      float myFloatNum = 5.99f;   <-- f?
+      char myLetter = 'D';        <-- single quotes
+      boolean myBool = true;
+      String myText = "Hello";    <-- double quotes
+      String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};  <-- Arrays
+      int[][] myNumbers = { {1, 2, 3, 4}, {5, 6, 7} };
+      ; ex. ------------------------
+
+      # Type Casting -------------------------
+      ; https://stackoverflow.com/questions/1293819/why-does-java-implicitly-without-cast-convert-a-long-to-a-float
+
+"Widening Casting" (automatically) --->                   <--- "Narrowing Casting" (manually)
+--                                                                                        --
+|              1       2       2       4      8        4        8      bytes               |
+|            byte -> short -> char -> int -> long -> float -> double                       |
+--                                                                                        --
+            ; Subtle ------------------------
+            "Loss of magnitude" float -> long 保證有東西
+            "Loss of precision" long -> float 犧牲精確度
+            ; Subtle ------------------------
+
+      ; ex. ------------------------
+      Widening Casting
+            int myInt = 9;
+            double myDouble = myInt; 
+
+      Narrowing Casting
+            double myDouble = 9.78d;
+            int myInt = (int) myDouble;
+      
+      運算時
+            long sum1 = 100 + 50;
+            int sum2 = 250 + (int)sum1;
+      ; ex. ------------------------
+
+# method ============================================
+"A method must be declared within a class."
+"The method call must have the same number of arguments as there are parameters."
+
+      ; ex. ------------------------
+      public class Main {
+        static int myIntMethod(int x) {
+          return 5 + x;
+          }
+
+
+        static void myMethod(String fname, int age) {
+            int trueAge = myIntMethod(age);
+            System.out.println(fname + " is " + trueAge);
+        }
+
+        public static void main(String[] args) {
+            myMethod("Jenny", 8);
+            myMethod("Anja", 31);
+        }
+      }     
+      ; ex. ------------------------
+
+      "static" (靜止的) means that the method belongs to the Main class and not an object of the Main class.
+      "void" (空白) means that this method does not have a return value. 
+      "parameter" is passed to the method, it is called an "argument".
+            ; e.g.  from the example above, parameter: fname, argument: "Jenny"
+      
+
+
+
+
+
+
+
+
