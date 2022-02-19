@@ -1,16 +1,20 @@
-public class Test {
-    static int myIntMethod(int x) {
-        return 5 + x;
-    }
-
-
-    static void myMethod(String fname, int age) {
-        int trueAge = myIntMethod(age);
-        System.out.println(fname + " is " + trueAge);
-    }
-
+public class Main {
     public static void main(String[] args) {
-        myMethod("Jenny", 8);
-        myMethod("Anja", 31);
+
+        int sum ( int k){
+            if (k > 0) {
+                return k + sum(k - 1);
+            } else {
+                return 0;
+            }
+        }
+
+
+        int result = sum(10);
+        System.out.println(result);
+
+
     }
+
+
 }
